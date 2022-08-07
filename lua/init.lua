@@ -7,6 +7,35 @@ require('fzf-config')
 require('spectre-config')
 require('keymaps')
 
+-- FORMATTER
+
+local util = require("formatter.util")
+
+require('formatter').setup({
+  logging = true,
+  filetype = {
+    typescript = {
+      function()
+        return {
+          exe = "prettier",
+          args = {
+            "--stdin-filepath",
+            util.escape_path(util.get_current_buffer_file_path()),
+          },
+          stdin = true,
+          try_node_modules = true,
+        }
+      end
+    },
+  }
+})
+
+vim.api.nvim_create_autocmd({"BufWritePost"}, {
+  pattern = {"*.ts", "*.tsx"},
+  callback = function()
+    vim.cmd([[FormatWrite]])
+  end
+})
 -- THEME
 
 local onedark = require('onedark')

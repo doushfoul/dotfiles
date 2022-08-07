@@ -106,7 +106,7 @@ require('fzf-lua').setup {
 	files = {
 		-- previewer         = "cat",       -- uncomment to override previewer
 		prompt            = 'Files❯ ',
-		cmd               = 'ag --hidden --ignore .git -g ""',             -- "find . -type f -printf '%P\n'",
+		cmd               = 'rg --pretty --hidden --files-with-matches',             -- "find . -type f -printf '%P\n'",
 		git_icons         = true,           -- show git icons?
 		file_icons        = true,           -- show file icons?
 		color_icons       = true,           -- colorize file|git icons
