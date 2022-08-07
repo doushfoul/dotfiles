@@ -1,5 +1,5 @@
 require('nvim-treesitter.configs').setup {
-  ensure_installed = { "typescript", "javascript", "lua" }, -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+  ensure_installed = { "typescript", "javascript", "lua", "json" }, -- one of "all", "maintained" (parsers with maintainers), or a list of languages
   ignore_install = {}, -- List of parsers to ignore installing
   indent = {
     enable = true

@@ -106,7 +106,7 @@ require('fzf-lua').setup {
 	files = {
 		-- previewer         = "cat",       -- uncomment to override previewer
 		prompt            = 'Files❯ ',
-		cmd               = 'ag --hidden --ignore .git -g ""',             -- "find . -type f -printf '%P\n'",
+		cmd               = 'fd --hidden',             -- "find . -type f -printf '%P\n'",
 		git_icons         = true,           -- show git icons?
 		file_icons        = true,           -- show file icons?
 		color_icons       = true,           -- colorize file|git icons
@@ -172,9 +172,8 @@ require('fzf-lua').setup {
 	grep = {
 		prompt            = 'Rg❯ ',
 		input_prompt      = 'Grep❯ ',
-		cmd               = "ag --ignore bin",
-		rg_opts           = "--hidden --column --line-number --no-heading" ..
-			"--color=always --smart-case -g '!{.git,node_modules}/*'",
+		cmd               = "rg --vimgrep",
+    rg_opts           = "--column --line-number --no-heading --color=always --smart-case --max-columns=512",
 		git_icons         = false,           -- show git icons?
 		file_icons        = false,           -- show file icons?
 		color_icons       = false,           -- colorize file|git icons

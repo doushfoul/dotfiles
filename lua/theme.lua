@@ -1,6 +1,3 @@
-local onedark = require('onedark')
-onedark.setup({
-  style = 'deep'
+require("themer").setup({
+  colorscheme = "rose_pine_moon"
 })
-onedark.load()
-

@@ -20,4 +20,8 @@ vim.opt.guicursor = ''
 vim.opt.autoindent = true
 vim.opt.hidden = true
 vim.opt.termguicolors = true
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+vim.opt.sessionoptions:append("localoptions")
+vim.opt.grepprg = "rg --vimgrep --smart-case"
 -- vim.opt.background=dark
