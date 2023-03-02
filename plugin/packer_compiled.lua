@@ -84,6 +84,11 @@ _G.packer_plugins = {
     path = "/Users/alquemir/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
     url = "https://github.com/hrsh7th/cmp-nvim-lsp"
   },
+  ["cmp-nvim-lsp-signature-help"] = {
+    loaded = true,
+    path = "/Users/alquemir/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp-signature-help",
+    url = "https://github.com/hrsh7th/cmp-nvim-lsp-signature-help"
+  },
   ["cmp-tabnine"] = {
     loaded = true,
     path = "/Users/alquemir/.local/share/nvim/site/pack/packer/start/cmp-tabnine",
@@ -99,20 +104,10 @@ _G.packer_plugins = {
     path = "/Users/alquemir/.local/share/nvim/site/pack/packer/start/csv.vim",
     url = "https://github.com/chrisbra/csv.vim"
   },
-  ["formatter.nvim"] = {
-    loaded = true,
-    path = "/Users/alquemir/.local/share/nvim/site/pack/packer/start/formatter.nvim",
-    url = "https://github.com/mhartington/formatter.nvim"
-  },
   ["fzf-lua"] = {
     loaded = true,
     path = "/Users/alquemir/.local/share/nvim/site/pack/packer/start/fzf-lua",
     url = "https://github.com/ibhagwan/fzf-lua"
-  },
-  ["fzf-lua-projections.nvim"] = {
-    loaded = true,
-    path = "/Users/alquemir/.local/share/nvim/site/pack/packer/start/fzf-lua-projections.nvim",
-    url = "https://github.com/nyngwang/fzf-lua-projections.nvim"
   },
   ["lightline.vim"] = {
     loaded = true,
@@ -124,6 +119,21 @@ _G.packer_plugins = {
     path = "/Users/alquemir/.local/share/nvim/site/pack/packer/start/lspkind-nvim",
     url = "https://github.com/onsails/lspkind-nvim"
   },
+  ["lualine.nvim"] = {
+    loaded = true,
+    path = "/Users/alquemir/.local/share/nvim/site/pack/packer/start/lualine.nvim",
+    url = "https://github.com/nvim-lualine/lualine.nvim"
+  },
+  ["mason-lspconfig.nvim"] = {
+    loaded = true,
+    path = "/Users/alquemir/.local/share/nvim/site/pack/packer/start/mason-lspconfig.nvim",
+    url = "https://github.com/williamboman/mason-lspconfig.nvim"
+  },
+  ["mason.nvim"] = {
+    loaded = true,
+    path = "/Users/alquemir/.local/share/nvim/site/pack/packer/start/mason.nvim",
+    url = "https://github.com/williamboman/mason.nvim"
+  },
   ["null-ls.nvim"] = {
     loaded = true,
     path = "/Users/alquemir/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
@@ -134,25 +144,20 @@ _G.packer_plugins = {
     path = "/Users/alquemir/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
   },
+  ["nvim-colorizer.lua"] = {
+    loaded = true,
+    path = "/Users/alquemir/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua",
+    url = "https://github.com/norcalli/nvim-colorizer.lua"
+  },
   ["nvim-fzf"] = {
     loaded = true,
     path = "/Users/alquemir/.local/share/nvim/site/pack/packer/start/nvim-fzf",
     url = "https://github.com/vijaymarupudi/nvim-fzf"
   },
-  ["nvim-lsp-installer"] = {
-    loaded = true,
-    path = "/Users/alquemir/.local/share/nvim/site/pack/packer/start/nvim-lsp-installer",
-    url = "https://github.com/williamboman/nvim-lsp-installer"
-  },
   ["nvim-lspconfig"] = {
     loaded = true,
     path = "/Users/alquemir/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
-  },
-  ["nvim-spectre"] = {
-    loaded = true,
-    path = "/Users/alquemir/.local/share/nvim/site/pack/packer/start/nvim-spectre",
-    url = "https://github.com/windwp/nvim-spectre"
   },
   ["nvim-tree.lua"] = {
     loaded = true,
@@ -189,40 +194,20 @@ _G.packer_plugins = {
     path = "/Users/alquemir/.local/share/nvim/site/pack/packer/start/popup.nvim",
     url = "https://github.com/nvim-lua/popup.nvim"
   },
-  ["projections.nvim"] = {
-    loaded = true,
-    path = "/Users/alquemir/.local/share/nvim/site/pack/packer/start/projections.nvim",
-    url = "https://github.com/gnikdroy/projections.nvim"
-  },
   ["rust.vim"] = {
     loaded = true,
     path = "/Users/alquemir/.local/share/nvim/site/pack/packer/start/rust.vim",
     url = "https://github.com/rust-lang/rust.vim"
-  },
-  ["tabnine-nvim"] = {
-    loaded = true,
-    path = "/Users/alquemir/.local/share/nvim/site/pack/packer/start/tabnine-nvim",
-    url = "https://github.com/codota/tabnine-nvim"
   },
   ["themer.lua"] = {
     loaded = true,
     path = "/Users/alquemir/.local/share/nvim/site/pack/packer/start/themer.lua",
     url = "https://github.com/themercorp/themer.lua"
   },
-  ["typescript-vim"] = {
+  ["trouble.nvim"] = {
     loaded = true,
-    path = "/Users/alquemir/.local/share/nvim/site/pack/packer/start/typescript-vim",
-    url = "https://github.com/leafgarland/typescript-vim"
-  },
-  ["vim-javascript"] = {
-    loaded = true,
-    path = "/Users/alquemir/.local/share/nvim/site/pack/packer/start/vim-javascript",
-    url = "https://github.com/pangloss/vim-javascript"
-  },
-  ["vim-jsx-typescript"] = {
-    loaded = true,
-    path = "/Users/alquemir/.local/share/nvim/site/pack/packer/start/vim-jsx-typescript",
-    url = "https://github.com/peitalin/vim-jsx-typescript"
+    path = "/Users/alquemir/.local/share/nvim/site/pack/packer/start/trouble.nvim",
+    url = "https://github.com/folke/trouble.nvim"
   },
   ["vim-prettier"] = {
     loaded = true,

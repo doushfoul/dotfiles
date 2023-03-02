@@ -9,9 +9,6 @@ vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
   use { 'tpope/vim-surround' }
-  use { 'leafgarland/typescript-vim' }
-  use { 'pangloss/vim-javascript' }
-  use { 'peitalin/vim-jsx-typescript' }
   use { 'prettier/vim-prettier', run = 'yarn install' }
 
   use {
@@ -19,6 +16,11 @@ return require('packer').startup(function(use)
     requires = { 'kyazdani42/nvim-web-devicons' }, tag = 'nightly'
   }
 
+  use { 'toppair/peek.nvim', run = 'deno task --quiet build:fast' }
+  use { 'lukas-reineke/indent-blankline.nvim' }
+  use { 'neovim/nvim-lspconfig' }
+  use { 'williamboman/mason.nvim' }
+  use { 'williamboman/mason-lspconfig.nvim' }
   use { 'itchyny/lightline.vim' }
   use { 'chrisbra/csv.vim' }
   use { 'nvim-treesitter/nvim-treesitter' }
@@ -26,23 +28,20 @@ return require('packer').startup(function(use)
   use { 'nvim-treesitter/nvim-treesitter-refactor' }
   use { 'nvim-lua/popup.nvim' }
   use { 'nvim-lua/plenary.nvim' }
-  use { 'neovim/nvim-lspconfig' }
-  use { 'williamboman/nvim-lsp-installer' }
   use { 'ibhagwan/fzf-lua' }
   use { 'vijaymarupudi/nvim-fzf' }
   use { 'kyazdani42/nvim-web-devicons' }
-  use { 'windwp/nvim-spectre' }
   use { 'saadparwaiz1/cmp_luasnip' }
   use { 'L3MON4D3/LuaSnip' }
   use { 'rust-lang/rust.vim' }
   use { 'onsails/lspkind-nvim' }
   use { 'hrsh7th/nvim-cmp' }
   use { 'hrsh7th/cmp-nvim-lsp' }
- 	use { 'tzachar/cmp-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-cmp'}
+  use { 'hrsh7th/cmp-nvim-lsp-signature-help' }
+ 	use { 'tzachar/cmp-tabnine', run='./install.sh' }
   use { 'jose-elias-alvarez/null-ls.nvim' }
-  use { 'mhartington/formatter.nvim' }
   use { 'themercorp/themer.lua' }
-  use { 'gnikdroy/projections.nvim' }
-  use { 'nyngwang/fzf-lua-projections.nvim' }
-  use { 'codota/tabnine-nvim', run = "./dl_binaries.sh" }
+  use { 'nvim-lualine/lualine.nvim' } 
+  use { 'norcalli/nvim-colorizer.lua' }
+  use { 'folke/trouble.nvim' }
 end)
