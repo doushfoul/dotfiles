@@ -10,22 +10,30 @@ require('mason').setup({
 
 require('mason-lspconfig').setup({})
 
-vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(
-  vim.lsp.handlers.hover, {
-    border = 'single'
+require('lspconfig').lua_ls.setup({
+  settings = {
+    Lua = {
+      diagnostics = {
+        globals = { 'vim' }
+      }
+    }
   }
-)
+})
 
 _G.show_documentation = function()
   vim.cmd([[set eventignore=CursorHold]])
   vim.lsp.buf.hover()
-  vim.cmd([[autocmd CursorMoved <buffer> ++once set eventignore='']])
+  vim.cmd([[autocmd CursorMoved <buffer> ++once set eventignore=""]])
 end
 
-vim.diagnostic.config({
-  virtual_text = false,
-  float = { border = 'single' }
-})
+-- vim.cmd([[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, { focus = false })]])
 
-vim.o.updatetime = 250
-vim.cmd([[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, { focus = false })]])
+function setup_documentation ()
+  vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(
+    vim.lsp.handlers.hover, {
+      border = 'single'
+    }
+  )
+end
+
+setup_documentation()
