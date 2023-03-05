@@ -1,15 +1,15 @@
 local M = {}
-local logger = require('logger')
+local utils = require('utils.utils')
+local logger = require('utils.logger')
 local trouble = require('trouble')
-local utils = require('utils')
 
 local function show_diagnostics(args)
-  logger.log('Show diagnostics in buffer')
+ logger.info('Show diagnostics in buffer')
   vim.diagnostic.show()
 end
 
 local function hide_diagnostics()
-  logger.log('Hiding diagnostics in buffer')
+ logger.info('Hiding diagnostics in buffer')
   vim.diagnostic.hide()
 end
 
