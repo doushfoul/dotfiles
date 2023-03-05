@@ -1,5 +1,5 @@
 local M = {}
-local utils = require('utils.utils')
+local utils = require('utils.path')
 local logger = require('utils.logger')
 local trouble = require('trouble')
 

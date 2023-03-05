@@ -1,5 +1,6 @@
 local M = {}
-local utils = require('utils.utils')
+local utils = require('utils.path')
+local buffer = require('utils.buffer')
 local logger = require('utils.logger')
 
 local function get_current_cursor_position()
@@ -19,16 +20,13 @@ local function format_buffer()
 end
 
 local function execute_prettier_formatter()
-  if utils.is_typescript_file() == false then
+  if utils.is_typescript_file() == false or buffer.is_current_buffer_modified() == false then
     return
   end
 
   local cursor_position = get_current_cursor_position()
-
-  vim.schedule(function ()
-    format_buffer()
-    restore_cursor_position(cursor_position)
-  end)
+  format_buffer()
+  restore_cursor_position(cursor_position)
 end
 
 local function register_user_commands()
