@@ -13,14 +13,27 @@ local function restore_cursor_position(cursor_position)
   vim.fn.cursor(cursor_position[1], cursor_position[2])
 end
 
+local function format_buffer()
+  logger.info('Formatting buffer')
+  vim.cmd([[silent %!prettier --stdin-filepath %]])
+end
+
+local function reload_buffer()
+  logger.info('Reloading buffer')
+  vim.cmd([[update]])
+end
+
 local function execute_prettier_formatter()
+  if utils.is_typescript_file() == false then
+    return
+  end
+
+  local cursor_position = get_current_cursor_position()
+
   vim.schedule(function ()
-    if utils.is_typescript_file() then
-      local cursor_position = get_current_cursor_position()
-      logger.info('Formatting buffer')
-      vim.cmd([[silent %!prettier --stdin-filepath %]])
-      restore_cursor_position(cursor_position)
-    end
+    format_buffer()
+    reload_buffer()
+    restore_cursor_position(cursor_position)
   end)
 end
 
@@ -32,7 +45,9 @@ end
 
 local function register_auto_commands()
   vim.api.nvim_create_autocmd({ 'BufWrite' }, {
-    callback = execute_prettier_formatter
+    callback = function()
+      execute_prettier_formatter()
+    end
   })
 end
 
